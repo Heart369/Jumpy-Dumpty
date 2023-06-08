@@ -527,22 +527,49 @@
 
                 </ImageView>
             </LinearLayout>
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="20dp"
+    android:orientation="horizontal"
+    app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+    app:layout_constraintEnd_toEndOf="parent"
+    android:layout_marginBottom="5dp"
 
-            <TextView
-                android:id="@+id/textView13"
-                android:layout_width="130dp"
-                android:layout_height="20dp"
-                android:layout_marginEnd="20dp"
-                android:layout_marginBottom="5dp"
-                android:background="@drawable/tjcl"
-                android:gravity="center"
-                android:text="添加材料 +4"
-                android:textColor="#000000"
-                android:textSize="13sp"
-                app:layout_constraintBottom_toTopOf="@+id/linearLayout"
-                app:layout_constraintEnd_toEndOf="parent">
+    >
+    <TextView
+        android:id="@+id/textView14"
+        android:layout_width="0dp"
+        android:layout_height="20dp"
+        android:layout_weight="1"
+        android:background="@drawable/tjcl"
+        android:gravity="center"
+        android:text="添加材料 升满"
+        android:textColor="#000000"
+        android:layout_marginEnd="10dp"
+        android:layout_marginStart="10dp"
+        android:textSize="13sp"
+    >
 
-            </TextView>
+    </TextView>
+
+    <TextView
+        android:id="@+id/textView13"
+        android:layout_marginEnd="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_width="0dp"
+        android:layout_height="20dp"
+        android:background="@drawable/tjcl"
+        android:gravity="center"
+        android:text="添加材料 +4"
+        android:textColor="#000000"
+        android:layout_weight="1"
+        android:textSize="13sp"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintEnd_toEndOf="parent">
+
+    </TextView>
+</LinearLayout>
+
 
             <TextView
                 android:layout_width="wrap_content"
@@ -558,21 +585,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/scr_syw">
 
             </TextView>
-            <TextView
-                android:id="@+id/textView14"
-                android:layout_width="130dp"
-                android:layout_height="20dp"
-                android:layout_marginEnd="7dp"
-                android:layout_marginBottom="5dp"
-                android:background="@drawable/tjcl"
-                android:gravity="center"
-                android:text="添加材料 升满"
-                android:textColor="#000000"
-                android:textSize="13sp"
-                app:layout_constraintBottom_toTopOf="@+id/linearLayout"
-                app:layout_constraintEnd_toStartOf="@+id/textView13">
 
-            </TextView>
 
 
             <ImageView
@@ -662,9 +675,16 @@
             android:id="@+id/fct"
             android:layout_width="match_parent"
             android:layout_height="100dp"
-            android:background="#D7334259"
-            app:layout_constraintTop_toBottomOf="@+id/view2">
 
+            app:layout_constraintTop_toBottomOf="@+id/view2">
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#D7334259"
+                android:id="@+id/back_fct"
+                >
+
+            </View>
             <ScrollView
                 android:layout_width="500dp"
                 android:layout_height="match_parent"

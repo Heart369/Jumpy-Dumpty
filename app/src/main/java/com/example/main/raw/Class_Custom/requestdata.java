@@ -31,7 +31,7 @@ public class requestdata extends Thread {
                 .header("DS",ds_main.getDS())
                 .header("Host","api-takumi-record.mihoyo.com")
                 .header("x-rpc-client_type","5")
-                .header("x-rpc-device_fp","38d7eeb3cb5e7")
+                .header("x-rpc-device_fp","38d7eec4615d8")
                 .header("Referer","https://webstatic.mihoyo.com/")
                 .header("Cookie",cookie)
                 .get()

@@ -35,6 +35,7 @@ public class Qh_Activity extends BaseActivity implements View.OnClickListener {
     TextView t_mid, t_4, t_max,xdj,zs_qh,zs_dj,qhwc,mj;
     ConstraintLayout c4;
     LinearLayout l1;
+    View back_fct;
     int cts;
     ProgressBar progressBar;
     View zs_back,zs_back2;
@@ -74,7 +75,6 @@ public class Qh_Activity extends BaseActivity implements View.OnClickListener {
                         c2.setVisibility(View.GONE);
                         c3.setVisibility(View.GONE);
                         mainviewModel.getOb_syw().setValue(sywSxData2s_zs);
-                        zs_fct();
                     }
                     zs_fct();
                 }
@@ -156,7 +156,8 @@ public class Qh_Activity extends BaseActivity implements View.OnClickListener {
                 qhwc.setAnimation(animation1);
                 zs_back.setAnimation(animation1);
                 zs_dj.setAnimation(animation1);
-                fct.setAnimation(animSet);
+                fct.setAnimation(animation1);
+                back_fct.setAnimation(animSet);
                 zs_qh.setAnimation(animation1);
                 exit_qr.setVisibility(View.VISIBLE);
             }
@@ -219,6 +220,7 @@ public class Qh_Activity extends BaseActivity implements View.OnClickListener {
         t_max.setOnClickListener(this);
         qh=findViewById(R.id.imageView12);
         qh.setOnClickListener(this);
+        back_fct=findViewById(R.id.back_fct);
         l1=findViewById(R.id.linearLayout);
         xdj=findViewById(R.id.textView9);
         xdj.setVisibility(View.GONE);

@@ -126,7 +126,6 @@ public class MainActivity extends Activity implements View.OnClickListener {
     Context context;
     int width;
     int anim_flag = 5;
-    private static final int NOTIFYID_1 = 1;
     private TextView wwgLayout;
     view1_Activity view1_activity = new view1_Activity();
     view2_Activity view2_activity = new view2_Activity();
@@ -238,37 +237,6 @@ public class MainActivity extends Activity implements View.OnClickListener {
         pageview.add(view2);
         pageview.add(view3);
         MainAdapter mPagerAdapter=new MainAdapter(pageview);
-
-        //数据适配器
-//        PagerAdapter mPagerAdapter = new PagerAdapter() {
-//            @Override
-//            //获取当前窗体界面数
-//            public int getCount() {
-//                // TODO Auto-generated method stub
-//                return pageview.size();
-//            }
-//
-//            @Override
-//            //判断是否由对象生成界面
-//            public boolean isViewFromObject(View arg0, Object arg1) {
-//                // TODO Auto-generated method stub
-//                return arg0 == arg1;
-//            }
-//
-////            使从ViewGroup中移出当前View
-//            public void destroyItem(View arg0, int arg1, Object arg2) {
-//                ((ViewPager) arg0).removeView(pageview.get(arg1));
-//            }
-//
-//            //返回一个对象，这个对象表明了PagerAdapter适配器选择哪个对象放在当前的ViewPager中
-//            public Object instantiateItem(View arg0, int arg1) {
-//                ((ViewPager) arg0).addView(pageview.get(arg1));
-//                return pageview.get(arg1);
-//            }
-//
-//
-//        };
-
         //绑定适配器
         viewPager.setAdapter(mPagerAdapter);
         //设置viewPager的初始界面为第一个界面
@@ -489,21 +457,22 @@ public class MainActivity extends Activity implements View.OnClickListener {
                     view3_activity.cshbq(null);
                 } else {
                     Log.d("TAGBQ",data);
-//                    jsonbq = new jsonbq(data+"");
-//                    bianqian bqdata = null;
                     Gson gson=new Gson();
                     Bq_gson bq_gson=gson.fromJson(data,Bq_gson.class);
-                    Log.d("Day", "开始1"+bq_gson.data.transformer.recovery_time.toString());
-//                    bqdata = jsonbq.jx();
                     if (bq_gson.retcode == 1034){
                         view1_activity.jc();
                     }
-                    else {
-                        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O && bq_gson.data.current_resin == 160) {
-                            createtz();
-                        } else setnz( bq_gson.data.current_resin);
-                       view1_activity.sx(bq_gson);
+                    else if (bq_gson.data==null){
+                        view1_activity.login();
                     }
+                    else
+                        {
+                            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O && bq_gson.data.current_resin == 160) {
+                                createtz();
+                            } else setnz( bq_gson.data.current_resin);
+                            view1_activity.sx(bq_gson);
+                        }
+
                     if (bq_gson.message.equals("OK"))
                         view3_activity.cshbq(bq_gson);
                     else if (bq_gson.retcode == 1034)

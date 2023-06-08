@@ -489,21 +489,22 @@ public class MainActivity extends Activity implements View.OnClickListener {
                     view3_activity.cshbq(null);
                 } else {
                     Log.d("TAGBQ",data);
-//                    jsonbq = new jsonbq(data+"");
-//                    bianqian bqdata = null;
                     Gson gson=new Gson();
                     Bq_gson bq_gson=gson.fromJson(data,Bq_gson.class);
-                    Log.d("Day", "开始1"+bq_gson.data.transformer.recovery_time.toString());
-//                    bqdata = jsonbq.jx();
                     if (bq_gson.retcode == 1034){
                         view1_activity.jc();
                     }
-                    else {
-                        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O && bq_gson.data.current_resin == 160) {
-                            createtz();
-                        } else setnz( bq_gson.data.current_resin);
-                       view1_activity.sx(bq_gson);
+                    else if (bq_gson.data==null){
+                        view1_activity.login();
                     }
+                    else
+                        {
+                            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O && bq_gson.data.current_resin == 160) {
+                                createtz();
+                            } else setnz( bq_gson.data.current_resin);
+                            view1_activity.sx(bq_gson);
+                        }
+
                     if (bq_gson.message.equals("OK"))
                         view3_activity.cshbq(bq_gson);
                     else if (bq_gson.retcode == 1034)

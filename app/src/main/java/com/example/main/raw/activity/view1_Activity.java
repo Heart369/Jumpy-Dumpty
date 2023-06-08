@@ -486,19 +486,33 @@ public class view1_Activity extends AppCompatActivity {
 
 
         } else {
+            if (flag_sx)
+                pull.setRefreshing(false);
             if (flag_sx || flag_wl)
                 Toast.makeText(context, "请登录账号", Toast.LENGTH_SHORT).show();
             flag_sx = false;
             flag_wl = !flag_wl;
             Bqdata data1 = new Bqdata("账号过期请重新登录", "账号过期请重新登录", null, null, null, null, null, null);
             bqdata.set(0, data1);
+            bq_gson=null;
             setAdpter();
             return data1;
         }
 
 
     }
-
+    public void login() {
+        if (flag_sx)
+            pull.setRefreshing(false);
+        if (flag_sx || flag_wl)
+            Toast.makeText(context, "请登录账号", Toast.LENGTH_SHORT).show();
+        flag_sx = false;
+        flag_wl = !flag_wl;
+        Bqdata data1 = new Bqdata("账号过期请重新登录", "账号过期请重新登录", null, null, null, null, null, null);
+        bqdata.set(0, data1);
+        bq_gson=null;
+        setAdpter();
+    }
 
     public void mw() {
         if (flag_sx)
@@ -508,6 +522,7 @@ public class view1_Activity extends AppCompatActivity {
         flag_sx = false;
         flag_wl = !flag_wl;
         bqdata.set(0, new Bqdata("请检查网络连接", "请检查网络连接", null, null, null, null, null, null));
+        bq_gson=null;
         setAdpter();
     }
 
@@ -518,21 +533,22 @@ public class view1_Activity extends AppCompatActivity {
             Toast.makeText(context, "被检测啦", Toast.LENGTH_SHORT).show();
         flag_sx = false;
         flag_wl = !flag_wl;
+        bq_gson=null;
         bqdata.set(0, new Bqdata("被米游社检测请前往米游社通过验证", "被米游社检测请前往米游社通过验证", null, null, null, null, null, null));
         setAdpter();
     }
 
     public void setanim() {
-//        Animation animation;
-//        scrollView.scrollTo(0, 0);
-//        LayoutAnimationController controller;
-//        animation = new ScaleAnimation(0f, 1f, 0f, 1f, listView.getWidth() / 2f, -200f);
-//        animation.setDuration(250);
-//        controller = new LayoutAnimationController(animation, 0.3f);
-//        controller.setOrder(LayoutAnimationController.ORDER_NORMAL);
-//        listView.setLayoutAnimation(controller);
-//        listView.startLayoutAnimation();
-//        listView.startLayoutAnimation();
+        Animation animation;
+        scrollView.scrollTo(0, 0);
+        LayoutAnimationController controller;
+        animation = new ScaleAnimation(0f, 1f, 0f, 1f, listView.getWidth() / 2f, -200f);
+        animation.setDuration(250);
+        controller = new LayoutAnimationController(animation, 0.3f);
+        controller.setOrder(LayoutAnimationController.ORDER_NORMAL);
+        listView.setLayoutAnimation(controller);
+        listView.startLayoutAnimation();
+        listView.startLayoutAnimation();
     }
 
     public void jcc() {

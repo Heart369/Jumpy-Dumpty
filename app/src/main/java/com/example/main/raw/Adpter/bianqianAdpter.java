@@ -309,6 +309,8 @@ public class bianqianAdpter extends BaseAdapter {
             }else if (bqdata.getSztime().contains("被米游社检测")){
 
                 holder. shuzhi.setText("请前往米游社我的角色验证");
+            }else {
+                holder.shuzhi.setText("请登录账号哦");
             }
         }
 

@@ -37,7 +37,7 @@ public class Th extends Thread{
             }
             Log.d("TAG",""+a);
             data = re.getdata();
-            if (a==5)
+            if (a==15)
                 break;
         }
     }

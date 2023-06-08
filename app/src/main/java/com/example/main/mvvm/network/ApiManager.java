@@ -15,7 +15,7 @@ public class ApiManager {
     private Retrofit retrofit;
     private OkHttpClient client;
     private HttpbinServer apiServer;
-
+//123
     public static ApiManager getInstance() {
         if (apiManager == null) {
             synchronized (Object.class) {

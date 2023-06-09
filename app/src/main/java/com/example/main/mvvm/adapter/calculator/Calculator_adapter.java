@@ -44,8 +44,11 @@ public class Calculator_adapter extends RecyclerView.Adapter<Calculator_adapter.
         sb.add(String.valueOf(obj.get(position).getJszsg_fb().avatarId));
         Jsdy_t jsdy_t=new Jsdy_t(sb);
         String[] sb2=jsdy_t.js();
+        String sb3=sb2[0];
+        if (sb3.contains("enka"))
+            sb3=sb3.replaceAll("enka","");
         Glide.with(context)
-                .load("https://enka.network/ui/UI_AvatarIcon_"+sb2[0]+".png")
+                .load("https://enka.network/ui/UI_AvatarIcon_"+sb3+".png")
                 .fitCenter()
                 .error(R.drawable.ic_launcher_background)
                 .transform(new RoundedCorners(100))

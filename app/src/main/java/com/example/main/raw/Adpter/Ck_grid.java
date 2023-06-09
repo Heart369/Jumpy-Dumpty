@@ -49,6 +49,10 @@ public class Ck_grid extends BaseAdapter {
         Name_img name_img=new Name_img();
         String url=null;
         String image=name_img.zh(name.get(position));
+        if (image.contains("enak")){
+            image=image.replaceAll("enka_","");
+            url="https://enka.network/ui/UI_AvatarIcon_"+image+".png";
+        }else
         url="https://upload-bbs.mihoyo.com/game_record/genshin/character_icon/UI_AvatarIcon_"+image+".png";
         if (image.equals("xxx")){
              image=name_img.wq(name.get(position));

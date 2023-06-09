@@ -130,6 +130,8 @@ public class Fragment_Calculator extends Fragment {
         String[] sb2 = jsdy_t.js();
         name = sb2[0];
         switchMaterial=view.findViewById(R.id.switch_sh);
+        if (name.contains("enka"))
+            name=name.replaceAll("enka","");
         Gilde(image_lh, "https://enka.network/ui/UI_Gacha_AvatarImg_" + name + ".png");
         TextView name, lex;
         name = view.findViewById(R.id.textView_name);
@@ -506,7 +508,6 @@ public class Fragment_Calculator extends Fragment {
         switch (jl) {
             case "精炼一阶":
                 return 1;
-
             case "精炼二阶":
                 return 2;
             case "精炼三阶":

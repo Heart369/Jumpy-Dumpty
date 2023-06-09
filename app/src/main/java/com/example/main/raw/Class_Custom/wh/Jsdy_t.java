@@ -223,7 +223,7 @@ public class Jsdy_t {
                 case "10000082":
                     data2[s] = "Baizhuer";
                 case "10000083":
-                    data2[s] = "Momoka";
+                    data2[s] = "enkaMomoka";
 
             }
         }

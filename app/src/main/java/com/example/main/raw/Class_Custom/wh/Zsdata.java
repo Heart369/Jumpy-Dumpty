@@ -84,7 +84,7 @@ public class Zsdata {
 
     public List<Jswqdata> dqzy(){
         data=new ArrayList<>();
-        String[] data1=new String[]{"Kokomi","Yoimiya","Tohma","Heizo","Momoka"};
+        String[] data1=new String[]{"Kokomi","Yoimiya","Tohma","Heizo","enkaMomoka"};
         String[] data2= new String[]{"珊瑚宫心海","宵宫","托马","鹿野院平藏","绮良良"};
         int[] start=new int[]{5,5,4,4,4};
         for(int i=0;i<data1.length;i++){
@@ -292,7 +292,7 @@ public class Zsdata {
     }
     public List<Jswqdata> wqxmzy(){
         data=new ArrayList<>();
-        String[] data1=new String[]{"_Sword_Deshret_Awaken","_Sword_Ayus_Awaken","_Sword_Arakalari_Awaken","_Claymore_Arakalari_Awaken","_Sword_Pleroma_Awaken","_Bow_Ibis_Awaken"};
+        String[] data1=new String[]{"_Sword_Deshret_Awaken","_Sword_Ayus_Awaken","_Sword_Arakalari_Awaken","_Claymore_Arakalari_Awaken","_Sword_Pleroma_Awaken","enka_Bow_Ibis_Awaken"};
         String[] data2= new String[]{"圣显之钥","裁叶萃光","原木刀","森林王器","西福斯的月光","鹮穿之喙"};
         int[] start=new int[]{5,5,4,4,4,4};
         for(int i=0;i<data1.length;i++){

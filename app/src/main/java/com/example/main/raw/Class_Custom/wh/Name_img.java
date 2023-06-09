@@ -114,7 +114,7 @@ public class Name_img {
             case "流浪者":
                 img="Wanderer";
             case "绮良良":
-                img="Momoka";
+                img="enka_Momoka";
         }
         return img;
     }

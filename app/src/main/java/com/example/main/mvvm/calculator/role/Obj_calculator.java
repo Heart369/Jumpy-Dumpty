@@ -172,6 +172,7 @@ public abstract class Obj_calculator {
             SQLiteDatabase database_wq = sqLite1.getWritableDatabase();
             cursor = database_wq.query("js", new String[]{"weapontype"}, "name=?", new String[]{Wq_name}, null, null, null, null);
             cursor.moveToFirst();
+            if (cursor.getCount()!=0)
             wq_lx = cursor.getString(cursor.getColumnIndex("weapontype"));
             cursor.close();
             database_wq.close();
@@ -728,7 +729,10 @@ public abstract class Obj_calculator {
         cursor_wq.close();
         weaponKey = ClFct(fct);
         weaponFct = body.specialized;
+        Log.d("TAGBZ",weaponKey);
+        if ( jszsg.getFightPropMap().get(weaponKey)!=null)
         jszsg_fb.getFightPropMap().put(weaponKey, jszsg.getFightPropMap().get(weaponKey) + weaponFct);
+        else   jszsg_fb.getFightPropMap().put(weaponKey,  weaponFct);
         Wq_name = name;
         this.jl = jl + 1;
         WqName = name;

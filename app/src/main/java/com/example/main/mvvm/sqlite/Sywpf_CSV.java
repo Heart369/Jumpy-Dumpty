@@ -6,7 +6,6 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
 
-import com.example.main.raw.SQLite.CalSQLite;
 import com.example.main.raw.SQLite.Sywpf_SQLite;
 
 import java.io.BufferedReader;

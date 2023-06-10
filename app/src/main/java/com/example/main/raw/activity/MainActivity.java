@@ -266,12 +266,11 @@ public class MainActivity extends Activity implements View.OnClickListener {
         width = metric.widthPixels;     // 屏幕宽度（像素）
         setserver();
         time time = new time();
-
         ConfigSQLite sqLite1=new ConfigSQLite(context,"Config.bd",null,1);
         SQLiteDatabase databases=sqLite1.getReadableDatabase();
         Cursor cursor=databases.query("config",new String[]{"ischeck"},"id=?",new String[]{"3"},null,null,null);
         cursor.moveToFirst();
-        if (cursor.getString(cursor.getColumnIndex("ischeck")).equals("0"));
+        if (cursor.getString(cursor.getColumnIndex("ischeck")).equals("0"))
         if (preferences.getString("rq", "").length()==0) {
             preferences.edit().putString("rq", time.getDay()+"123").apply();
         } else if (!preferences.getString("rq", "").equals(time.getDay())){

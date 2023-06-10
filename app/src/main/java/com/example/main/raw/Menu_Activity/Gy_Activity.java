@@ -33,7 +33,7 @@ import dev.utils.common.able.Toable;
 
 public class Gy_Activity extends BaseActivity implements View.OnClickListener {
     RelativeLayout r1;
-    LinearLayout qq,wx,bilibili,email;
+    LinearLayout qq,wx,bilibili,email,fx;
     @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -73,6 +73,9 @@ public class Gy_Activity extends BaseActivity implements View.OnClickListener {
         bilibili.setOnClickListener(this);
         email=findViewById(R.id.email);
         email.setOnClickListener(this);
+        fx=findViewById(R.id.fx);
+        fx.setOnClickListener(this);
+
     }
 
 
@@ -122,6 +125,12 @@ public class Gy_Activity extends BaseActivity implements View.OnClickListener {
                 intent.putExtra(Intent.EXTRA_EMAIL, new String[] {"a1306433549@163.com"}); // 添加电子邮件收件人
                 startActivity(Intent.createChooser(intent, "Send email"));
                 break;
+            case R.id.fx:
+                Intent sendIntent = new Intent();
+                sendIntent.setAction(Intent.ACTION_SEND);
+                sendIntent.putExtra(Intent.EXTRA_TEXT, "一款功能超全的原神辅助app快来试试吧");
+                sendIntent.setType("text/plain");
+                startActivity(Intent.createChooser(sendIntent, "Share to..."));
         }
     }
 }

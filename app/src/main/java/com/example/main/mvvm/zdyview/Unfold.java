@@ -5,6 +5,8 @@ import android.animation.ValueAnimator;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.drawable.Drawable;
+import android.text.Html;
+import android.text.Spanned;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -25,6 +27,12 @@ public class Unfold extends ConstraintLayout {
     ConstraintLayout layout;
     TextView wb, title;
     ImageView imageView;
+    Spanned plaintext;
+
+    public void setPlaintext_url(Spanned plaintext) {
+        this.plaintext = plaintext;
+        wb.setText(plaintext);
+    }
 
     public Unfold(@NonNull Context context) {
         this(context, null);

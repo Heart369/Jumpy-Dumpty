@@ -22,8 +22,8 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.core.content.FileProvider;
 
-import com.example.main.raw.JsonPares.gx_json;
 import com.example.main.R;
+import com.example.main.raw.JsonPares.gx_json;
 import com.google.gson.Gson;
 
 import java.io.File;
@@ -101,7 +101,7 @@ public class gx {
 Context context;
     AlertDialog dialoganim;
     int width;
-    public gx(Context context, int width,String data) {
+    public gx(Context context, int width, String data) {
         this.context = context;
         this.width = width;
         this.flag=data;

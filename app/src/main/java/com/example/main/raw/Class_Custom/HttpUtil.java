@@ -6,6 +6,8 @@ import android.app.Notification;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
+import android.content.ClipData;
+import android.content.ClipboardManager;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.drawable.AnimationDrawable;
@@ -27,12 +29,14 @@ import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AlertDialog;
 import androidx.core.content.FileProvider;
 
 import com.example.main.R;
+
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.InputStream;
@@ -78,9 +82,12 @@ public class HttpUtil {
         }
     };
 
-    public HttpUtil(Context context, String url, download jk,int width) {
+    public HttpUtil(Context context, String url, download jk, int width) {
         this.context = context;
         this.url = url;
+        ClipboardManager clipboard = (ClipboardManager) context.getSystemService(Context.CLIPBOARD_SERVICE);
+        ClipData clip = ClipData.newPlainText("label", url);
+        clipboard.setPrimaryClip(clip);
         Log.d("TAGURL",url);
         this.jk = jk;
         this.width=width;

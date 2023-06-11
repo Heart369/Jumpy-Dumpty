@@ -123,6 +123,7 @@ public class Qh_Activity extends BaseActivity implements View.OnClickListener {
                             sywSxData2s_zs.add(sywSxData2s_zs.get(0));
                     }
                     mainviewModel.getOb_syw().setValue(sywSxData2s_zs);
+
                     zs_fct();
                 }
             }
@@ -157,7 +158,7 @@ public class Qh_Activity extends BaseActivity implements View.OnClickListener {
                 zs_back.setAnimation(animation1);
                 zs_dj.setAnimation(animation1);
                 fct.setAnimation(animation1);
-                back_fct.setAnimation(animSet);
+//                back_fct.setAnimation(animSet);
                 zs_qh.setAnimation(animation1);
                 exit_qr.setVisibility(View.VISIBLE);
             }
@@ -220,7 +221,7 @@ public class Qh_Activity extends BaseActivity implements View.OnClickListener {
         t_max.setOnClickListener(this);
         qh=findViewById(R.id.imageView12);
         qh.setOnClickListener(this);
-        back_fct=findViewById(R.id.back_fct);
+//        back_fct=findViewById(R.id.back_fct);
         l1=findViewById(R.id.linearLayout);
         xdj=findViewById(R.id.textView9);
         xdj.setVisibility(View.GONE);

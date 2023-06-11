@@ -1,9 +1,12 @@
 package com.example.main.raw.activity;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import android.app.Dialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -12,9 +15,12 @@ import android.os.Looper;
 import android.os.Message;
 import android.util.Log;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.webkit.CookieManager;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+import android.widget.ScrollView;
 import android.widget.TextView;
 
 import com.airbnb.lottie.LottieAnimationView;
@@ -67,11 +73,45 @@ Handler handler=new Handler(Looper.myLooper()){
         toolbar=findViewById(R.id.toolbar_login);
         setSupportActionBar(toolbar);
         setTitle(null);
+        SharedPreferences preferences=getSharedPreferences("data", MODE_PRIVATE);
+        String cookie_sq = preferences.getString("cookie_sq", "");
+        if (cookie_sq.length()==0){
+            AlertDialog.Builder dialog=new AlertDialog.Builder(LoginActivity.this).setTitle("Cookie授权").setNegativeButton("拒绝", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                finish();
+                }
+            }).setPositiveButton("确认", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    preferences.edit().putString("cookie_sq","已经同意").apply();
+                }
+            });
+// 添加文本滚动视图
+            ScrollView scrollView = new ScrollView(this);
+            TextView textView = new TextView(this);
+            textView.setText("您登录即表示您同意我们在本站上使用Cookies等技术收集信息，此Cookie将用于获取您的角色信息，便签等官方数据，Cookie将保存在本地不做其他任何形式的保存(同意后不再提示)");
+            textView.setPadding(30,20,20,30);
+            scrollView.addView(textView);
+
+// 将文本滚动视图添加到对话框中
+            dialog.setView(scrollView);
+            AlertDialog show = dialog.show();
+            Window window = show.getWindow();
+            window.setWindowAnimations(R.style.dialogWindowAnim3);
+            WindowManager.LayoutParams lp = window.getAttributes();
+            lp.dimAmount =0f;
+            window.setAttributes(lp);
+            window.setBackgroundDrawable(getDrawable(R.drawable.shape_19dp));
+// 显示对话框
+
+        }
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 finish();
                 overridePendingTransition(R.anim.back,R.anim.closs);
+
             }
         });
         webView=findViewById(R.id.web_3);

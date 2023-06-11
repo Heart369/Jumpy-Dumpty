@@ -27,10 +27,9 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        Android:layout_editor_absoluteX="0dp"
         android:layout_below="@+id/toolbar_gy"
-       android:layout_marginBottom="20dp"
-        >
+        android:layout_marginBottom="20dp"
+        Android:layout_editor_absoluteX="0dp">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -266,11 +265,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="20dp"
+                android:background="@drawable/shape_11dp_corners"
                 android:paddingTop="10dp"
                 android:paddingBottom="10dp"
-                android:background="@drawable/shape_11dp_corners"
-                app:layout_constraintTop_toBottomOf="@+id/constraintLayout6"
-                >
+                app:layout_constraintTop_toBottomOf="@+id/constraintLayout6">
 
                 <TextView
                     android:id="@+id/gybbzd"
@@ -285,25 +283,47 @@
                     app:layout_constraintHorizontal_bias="0.05"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
+
                 <com.example.main.mvvm.zdyview.Unfold
                     android:id="@+id/u1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/gybbzd"
+                    app:plaintext="欢迎使用我们的游戏第三方辅助应用。本协议规定您与我们之间的权利义务关系，请仔细阅读，并确保了解和同意本协议的全部内容。如果您不同意本协议的任何内容，您应立即停止使用本应用。\n
+\n
+1.服务内容\n
+本应用的功能为游戏第三方辅助，可以帮助玩家更加便捷地游戏。本应用通过获取游戏内部数据，以达到帮助玩家更好游戏的效果。同时，我们承诺不会通过本应用进行任何破坏游戏公平性的行为。\n
+\n
+2.用户责任\n
+用户在使用本应用时应遵守国家法律法规及各种服务条款、规则和规定，不得利用本应用从事任何违法或损害他人合法权益的行为，包括但不限于：\n
+\n
+利用本应用进行赌博、色情、传播谣言或虚假信息等行为；\n
+利用本应用进行广告或推销活动；\n
+通过篡改、伪造数据等方式破坏游戏的公平性和平衡性。\n
+用户应自行承担使用本应用的风险，对于其在本应用上的行为及其后果，应自行承担责任。如果因为用户的行为导致第三方或我们遭受损失，用户应负全部赔偿责任。\n
+\n
+3.服务的变更和终止\n
+我们有权根据实际情况对本应用的服务内容进行调整和变更，并有权随时终止向用户提供本应用的服务。用户应当及时关注本应用更新情况和版本升级，如未按要求操作或使用旧版应用，由此导致的问题由用户自行承担。\n
+\n
+4.条款变动和通知\n
+我们有权在必要时修改本协议的任何条款，且无需事先告知用户。新版本条款自发布之日起立即生效，用户应定期关注条款的更新情况。如果您继续使用本应用，即表示您已接受并同意修改后的条款。\n
+\n
+5.其他条款\n
+如本协议中的任何条款被视为违法、无效或因任何原因被认定为不可执行，则该条款应被视为可分割的，不影响其他条款的有效性和可执行性。\n
+\n
+以上是蹦蹦炸弹的服务条款，请您仔细阅读并理解后再使用本应用。如果您对内容有任何疑问或建议，欢迎随时联系我们。\n"
                     app:text="服务条款"
-                    app:title_back="@drawable/sbw_blue"
-                    app:plaintext="暂无"
-                    app:layout_constraintTop_toBottomOf="@id/gybbzd">
+                    app:title_back="@drawable/sbw_blue">
 
                 </com.example.main.mvvm.zdyview.Unfold>
 
                 <com.example.main.mvvm.zdyview.Unfold
                     android:id="@+id/u2"
-                    app:text="免责声明"
-                    app:title_back="@drawable/sbw_blue"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/u1"
                     app:plaintext="感谢您使用本应用。请您在使用本应用前仔细阅读本声明。本声明中的我们是指本应用开发团队及运营人员，“本应用”是指蹦蹦炸弹 App。\n
 
 本应用提供游戏辅助功能，是一款辅助工具软件，旨在为玩家提供更好、更便捷的游戏体验。当您使用本应用时，您需要了解：\n
@@ -323,7 +343,8 @@
 7.使用本应用即代表您已经完全理解并接受了本声明中所述的内容，如因使用本应用产生的任何问题及纠纷，均与本应用开发团队和运营人员无关。\n
 
 最后，祝您使用愉快"
-                    app:layout_constraintTop_toBottomOf="@+id/u1">
+                    app:text="免责声明"
+                    app:title_back="@drawable/sbw_blue">
 
                 </com.example.main.mvvm.zdyview.Unfold>
 
@@ -332,10 +353,56 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     app:layout_constraintTop_toBottomOf="@+id/u2"
+                    app:plaintext="感谢您使用蹦蹦炸弹。我们承诺保护您的个人信息和数据安全，尊重您的隐私权利，制定本隐私政策以说明我们如何收集、使用、存储和保护您的信息。\n
+\n
+1.信息的类型\n
+我们可能会收集并使用以下类型的信息：\n
+•设备信息：例如设备型号、操作系统版本、唯一设备标识符等；\n
+•游戏信息：例如游戏名称、游戏等级、游戏记录等；\n
+•操作信息：例如您在使用应用时的操作行为、时间、频率和持续时间等；\n
+•其他信息：例如您反馈的意见和建议、位置信息（仅在您同意授权的情况下）、特定权限下的相册、相机访问等。\n
+\n
+2.信息的收集和使用方式\n
+我们可能通过以下方式收集和使用您的信息：\n
+•您主动提供的信息：例如您在应用中填写的表单、反馈意见等；\n
+•自动收集的信息：例如应用程序使用日志、cookie和类似技术；\n
+•第三方服务提供的信息：例如广告商提供的广告点击信息；\n
+•应用权限收集的信息：例如获取您的设备信息、位置信息、存储空间访问权限等。\n
+•我们会使用收集到的信息来改进应用的内容和功能，优化用户体验，为您更好地提供服务。我们承诺不会将您的个人信息用于非法行为，也不会向第三方出售或转让您的个人信息。\n
+\n
+3.信息的分享\n
+我们将保护您的隐私权利并尽力保密您的个人信息。但是，在下列情形下，我们可能会披露您的个人信息：\n
+•为了保证应用程序安全运行而与第三方共享信息；\n
+•根据适用法律、法规、法院命令、政府机关要求而共享信息；\n
+•向具有必要资格的第三方（例如我们的服务提供商）提供信息，以帮助我们向您提供服务；\n
+•如果我们的公司或资产被其他公司收购或合并，我们将向新所有者披露信息。\n
+我们承诺在上述情况下仅披露必要的信息，并对所披露的信息进行严格的保密和控制。\n\n
+4.信息的保护\n
+我们会采取各种技术措施和管理措施，以确保您的信息不受未经授权的访问、使用、披露、修改或破坏，包括但不限于加密、防火墙、密码保护和访问控制等。同时，我们会对所有工作人员进行信息保密培训，并建立内部管理机制，以确保信息安全。\n
+\n
+我们承诺在任何时候都不会泄露或出售您的个人信息，并将在符合适用法律、法规、政策的前提下妥善处理您的信息。\n
+
+5.未成年人信息处理\n
+我们十分重视未成年人的个人信息保护。如果您是未成年人，请在监护人的指导和监督下使用我们的应用。\n
+
+6.隐私政策的更新\n
+我们可能会不时更新本隐私政策的内容，以反映我们的信息处理实践、法律要求和业务变更等情况。如有重大变化，我们将通过适当方式通知您。在修订后的隐私政策上发布修订日期。\n
+\n
+7.联系我们\n
+如果您对本隐私政策或相关事项有任何疑问、意见或反馈，请联系我们。"
                     app:text="隐私政策"
+                    app:title_back="@drawable/sbw_blue" />
+
+                <com.example.main.mvvm.zdyview.Unfold
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@+id/u3"
+                    android:id="@+id/u4"
                     app:title_back="@drawable/sbw_blue"
-                    app:plaintext="暂无"
+                    app:text="额外说明"
+                    app:plaintext="本项目已在github开源如有疑问请自行查阅代码\nhttps://github.com/Heart369/Jumpy-Dumpty"
                     >
+
                 </com.example.main.mvvm.zdyview.Unfold>
                 <LinearLayout
                     android:id="@+id/fx"
@@ -344,7 +411,8 @@
                     android:background="@drawable/sbw_blue"
                     android:gravity="center"
                     android:orientation="horizontal"
-                    app:layout_constraintTop_toBottomOf="@+id/u3">
+                    app:layout_constraintTop_toBottomOf="@+id/u4"
+                   >
 
                     <ImageView
                         android:layout_width="30dp"
@@ -358,11 +426,12 @@
                         android:layout_height="match_parent"
                         android:gravity="center|left"
                         android:paddingStart="10dp"
-                        android:textSize="18sp"
-                        android:text="分享本软件">
+                        android:text="分享本软件"
+                        android:textSize="18sp">
 
                     </TextView>
                 </LinearLayout>
+
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 

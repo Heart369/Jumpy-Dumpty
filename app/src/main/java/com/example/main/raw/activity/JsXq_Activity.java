@@ -134,21 +134,7 @@ public class JsXq_Activity extends AppCompatActivity {
         bc.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String filename = "myImage.png";
-                String location = Environment.getExternalStorageDirectory().toString() + File.separator + Environment.DIRECTORY_PICTURES + File.separator;
-                File file = new File(location, filename);
-                try {
-                    FileOutputStream fos = new FileOutputStream(file);
-                    bitmap.compress(Bitmap.CompressFormat.PNG, 100, fos);
-                    fos.flush();
-                    fos.close();
-                    // 在发送通知之前把这个文件加入到相册中
-
-                    MediaStore.Images.Media.insertImage(getContentResolver(), file.getAbsolutePath(), filename, null);
-                    Toast.makeText(JsXq_Activity.this, "图片已保存到相册", Toast.LENGTH_SHORT).show();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
+                Share.getImageUri(bitmap,JsXq_Activity.this);
             }
         });
 // 将 Matrix 对象应用到 ImageView 上

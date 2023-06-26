@@ -9,6 +9,7 @@ import android.net.Uri;
 import android.provider.MediaStore;
 import android.util.Log;
 import android.widget.ScrollView;
+import android.widget.Toast;
 
 import androidx.core.content.FileProvider;
 
@@ -58,6 +59,7 @@ public class Share {
         ByteArrayOutputStream bytes = new ByteArrayOutputStream();
         bitmap.compress(Bitmap.CompressFormat.JPEG, 100, bytes);
         String path = MediaStore.Images.Media.insertImage(context.getContentResolver(), bitmap, "Title", null);
+        Toast.makeText(context, "保存成功", Toast.LENGTH_SHORT).show();
         return Uri.parse(path);
     }
     public static Uri shareImageToQQ(Bitmap bitmap,Context context) {
@@ -73,7 +75,7 @@ public class Share {
             FileOutputStream fos = new FileOutputStream(tempFile);
             fos.write(byteArray);
             fos.close();
-             imageUri = FileProvider.getUriForFile(context, context.getPackageName() + ".fileprovider", tempFile);
+             imageUri = FileProvider.getUriForFile(context, context.getPackageName() + ".fileProvider", tempFile);
 
         } catch (IOException e) {
             e.printStackTrace();

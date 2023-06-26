@@ -55,7 +55,7 @@ public class gx {
                 button.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-
+                        dialoganim.dismiss();
                         HttpUtil httpUtil=new HttpUtil(context, data.getData().getDownloadURL(), new HttpUtil.download() {
                             @Override
                             public void download_ok(File file) {

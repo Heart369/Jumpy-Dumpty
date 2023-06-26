@@ -18,4 +18,5 @@
     <files-path
         name="path6"
         path="/ff" />
+    <cache-path name="cache" path="/" />
 </paths>

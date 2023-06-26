@@ -181,7 +181,7 @@ public class HttpUtil {
                     is.close();
                     connection.disconnect();
                     len_m=-5;
-                    jk.download_ok(file_apk);
+
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
@@ -236,6 +236,7 @@ public class HttpUtil {
             } else {
                 intent.setDataAndType(Uri.fromFile(file_apk), "application/vnd.android.package-archive");
             }
+
             PendingIntent mPendingIntent= PendingIntent.getActivity(context, 0,intent, PendingIntent.FLAG_IMMUTABLE);
             importance = NotificationManager.IMPORTANCE_HIGH ;
             channel = new NotificationChannel(id, "123", importance);
@@ -251,7 +252,11 @@ public class HttpUtil {
                     .setAutoCancel(true)
                     .setContentIntent(mPendingIntent)
                     .build();
-           Log.d("TAG","下载完毕");
+            manager.notify(2,notification);
+            manager.cancel(1);
+            Log.d("TAG","下载完毕");
+            jk.download_ok(file_apk);
+            return;
         }else {
             notification = new Notification.Builder(context,id)
                     .setCategory(Notification.CATEGORY_MESSAGE)

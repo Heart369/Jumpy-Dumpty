@@ -2,7 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.main">
-
+    <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE"
+        tools:ignore="ScopedStorage" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.VIBRATE" />
     <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" />
@@ -18,6 +19,7 @@
 
     <application
         android:allowBackup="true"
+        android:requestLegacyExternalStorage="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
         android:icon="@mipmap/ic_launcher"
@@ -31,15 +33,6 @@
             android:name=".raw.activity.SmActivity"
             android:exported="false" />
 
-        <provider
-            android:name="androidx.core.content.FileProvider"
-            android:authorities="com.example.main.fileprovider"
-            android:exported="false"
-            android:grantUriPermissions="true">
-            <meta-data
-                android:name="android.support.FILE_PROVIDER_PATHS"
-                android:resource="@xml/provider_paths" />
-        </provider>
 
         <activity
             android:name="com.yalantis.ucrop.UCropActivity"
